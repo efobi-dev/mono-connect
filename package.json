@@ -1,35 +1,57 @@
 {
-  "name": "@mono.co/connect.js",
-  "version": "2.2.0",
-  "description": "Mono Connect Library",
-  "main": "index.js",
+  "name": "@efobi/mono-connect",
+  "version": "3.0.1",
+  "description": "Type-safe, framework-agnostic TypeScript SDK for Mono Connect",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "build": "webpack --config ./webpack.config.js"
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "ci": "bun run build && bun run test && bun run format",
+    "local-release": "changeset version && changeset publish"
   },
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/withmono/connect.js.git"
+    "url": "git+https://github.com/efobi-dev/mono-connect.git"
   },
   "keywords": [
     "mono",
     "connect",
-    "widget"
+    "widget",
+    "typescript",
+    "sdk"
   ],
   "author": "Mono (https://mono.co/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/withmono/connect.js/issues"
+    "url": "https://github.com/efobi-dev/mono-connect/issues"
   },
-  "homepage": "https://github.com/withmono/connect.js#readme",
+  "homepage": "https://github.com/efobi-dev/mono-connect#readme",
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  },
   "devDependencies": {
-    "terser-webpack-plugin": "^4.2.3",
-    "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1"
-  },
-  "dependencies": {
-    "axios": "^1.13.2"
+    "tsdown": "^0.15.6",
+    "typescript": "^5.9.3",
+    "@changesets/cli": "^2.29.5"
   }
 }

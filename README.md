@@ -3,6 +3,8 @@
 
 Mono Connect.js is a quick and secure way to link bank accounts to Mono from within your app. Mono Connect is a drop-in framework that handles connecting a financial institution to your app (credential validation, multi-factor authentication, error handling, etc). It works with all major javascript frameworks.
 
+This is a modern, **type-safe, framework-agnostic TypeScript SDK**. It ships as ESM with bundled type declarations, uses [Zod](https://zod.dev) for runtime validation of your configuration, and is built with [tsdown](https://tsdown.dev). All public types (`ConnectOptions`, `ConnectEventName`, `SetupConfig`, etc.) are exported.
+
 For accessing customer accounts and interacting with Mono's API (Identity, Transactions, Income, DirectPay) use the server-side [Mono API](https://docs.mono.co/api).
 
 ## Documentation
@@ -10,7 +12,7 @@ For accessing customer accounts and interacting with Mono's API (Identity, Trans
 For complete information about Mono Connect, head to the [docs](https://docs.mono.co/docs/financial-data/overview).
 
 ## Requirements
-Node 10 or higher.
+Node 18 or higher (uses the native `fetch` API).
 
 
 ## Getting Started
