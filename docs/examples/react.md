@@ -1,8 +1,10 @@
 ## Link account
+
 Link a user account
+
 ```js
 import React from 'react';
-import MonoConnect from '@mono.co/connect.js';
+import MonoConnect from '@efobi/mono-connect';
 
 export default function App() {
   const monoConnect = React.useMemo(() => {
@@ -28,16 +30,17 @@ export default function App() {
 }
 ```
 
-## Re-authorisation 
+## Re-authorisation
 
-You can reauthorise a user account if required. Using the `reauthorise()` function. 
+You can reauthorise a user account if required. Using the `reauthorise()` function.
 
 - Note, the `reauthorise()` function should be used in place of the `setup()` function. The two should not be used at the same time.
 
 See example below;
+
 ```js
 import React from 'react';
-import MonoConnect from '@mono.co/connect.js';
+import MonoConnect from '@efobi/mono-connect';
 
 export default function App() {
 
@@ -67,10 +70,12 @@ export default function App() {
 ```
 
 ## Direct Debit
+
 Charge an account `one-time-debit` or `recurring`.
+
 ```js
 import React from 'react';
-import MonoConnect from '@mono.co/connect.js';
+import MonoConnect from '@efobi/mono-connect';
 
 export default function App() {
   const monoConnect = React.useMemo(() => {

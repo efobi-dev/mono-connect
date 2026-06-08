@@ -1,5 +1,7 @@
 ## Link account
+
 Link a user account
+
 ```js
 import { useState, useCallback } from "react";
 
@@ -7,7 +9,7 @@ export default function IndexPage() {
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
   const openMonoWidget = useCallback(async () => {
-    const MonoConnect = (await import("@mono.co/connect.js")).default;
+    const MonoConnect = (await import("@efobi/mono-connect")).default;
     
     const monoInstance = new MonoConnect({
       key: "PUBLIC_KEY",
@@ -33,13 +35,14 @@ export default function IndexPage() {
 }
 ```
 
-## Re-authorisation 
+## Re-authorisation
 
-You can reauthorise a user account if required. Using the `reauthorise()` function. 
+You can reauthorise a user account if required. Using the `reauthorise()` function.
 
 - Note, the `reauthorise()` function should be used in place of the `setup()` function. The two should not be used at the same time.
 
 See example below;
+
 ```js
 import { useState, useCallback } from "react";
 
@@ -48,7 +51,7 @@ export default function IndexPage() {
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
   const reauthenticate = useCallback(async () => {
-    const MonoConnect = (await import("@mono.co/connect.js")).default;
+    const MonoConnect = (await import("@efobi/mono-connect")).default;
 
     const monoInstance = new MonoConnect({
       key: "PUBLIC_KEY",
@@ -75,7 +78,9 @@ export default function IndexPage() {
 ```
 
 ## Direct Debit
+
 Charge an account `one-time-debit` or `recurring`.
+
 ```js
 import { useState, useCallback } from "react";
 
@@ -83,7 +88,7 @@ export default function IndexPage() {
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
   const payWithMono = useCallback(async () => {
-    const MonoConnect = (await import("@mono.co/connect.js")).default;
+    const MonoConnect = (await import("@efobi/mono-connect")).default;
     
     const monoInstance = new MonoConnect({
       key: "PUBLIC_KEY",

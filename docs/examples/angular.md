@@ -1,8 +1,10 @@
 ## Link account
+
 Link a user account
+
 ```js
 import { Component, OnInit } from '@angular/core';
-import MonoConnect from '@mono.co/connect.js';
+import MonoConnect from '@efobi/mono-connect';
 
 @Component({
   selector: 'app-mono',
@@ -34,16 +36,17 @@ export class MonoComponent implements OnInit {
 </button>
 ```
 
-## Re-authorisation 
+## Re-authorisation
 
-You can reauthorise a user account if required. Using the `reauthorise()` function. 
+You can reauthorise a user account if required. Using the `reauthorise()` function.
 
 - Note, the `reauthorise()` function should be used in place of the `setup()` function. The two should not be used at the same time.
 
 See example below;
+
 ```js
 import { Component, OnInit } from '@angular/core';
-import MonoConnect from '@mono.co/connect.js';
+import MonoConnect from '@efobi/mono-connect';
 
 @Component({
   selector: 'app-mono',
@@ -74,10 +77,12 @@ export class MonoComponent implements OnInit {
 ```
 
 ## Direct Debit
+
 Charge an account `one-time-debit` or `recurring`.
+
 ```js
 import { Component, OnInit } from '@angular/core';
-import MonoConnect from '@mono.co/connect.js';
+import MonoConnect from '@efobi/mono-connect';
 
 @Component({
   selector: 'app-mono',
